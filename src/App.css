@@ -8,8 +8,10 @@
 
 .title {
   background-color: dodgerblue;
+  color: white;
   width: fit-content;
   align-self: center;
+  padding: 10px;
 }
 
 .todo {
