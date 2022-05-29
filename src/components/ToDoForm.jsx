@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ToDoForm = () => {
+const ToDoForm = ({ handleClick }) => {
   const [todo, setTodo] = useState("");
 
   return (
@@ -13,7 +13,14 @@ const ToDoForm = () => {
             setTodo(e.target.value);
           }}
         />
-        <button>Submit</button>
+        <button
+          onClick={() => {
+            handleClick(todo);
+            setTodo("");
+          }}
+        >
+          Submit
+        </button>
       </span>
     </div>
   );
