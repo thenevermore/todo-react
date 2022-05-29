@@ -8,7 +8,6 @@ import React from 'react';
 
 import ToDo from './containers/ToDo';
 
-
 const App = () => {
   return (
     <div className="App">
