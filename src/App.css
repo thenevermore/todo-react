@@ -4,6 +4,7 @@
   flex-direction: column;
   background-color:lightskyblue;
   min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
 }
 
 .title {
@@ -26,6 +27,7 @@
 
 .todo-list {
   width: fit-content;
+  text-align: left;
 }
 
 .todo-form span {
