@@ -7,17 +7,21 @@ const ToDo = () => {
   const [todos, setTodos] = useState([]);
 
   const handleClick = (todo) => {
-    // NEVER mutate state directly, like using push() or =
-    // Treat state as if it were immutable, so you replace the whole array
-    // ...todos is the spread operator, it spreads the array
-    setTodos([...todos, todo]);
+    const newTodo = { id: todos.length, task: todo, complete: false };
+    setTodos([...todos, newTodo]);
   };
+
+  const handleCheckbox = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].complete = !newTodos[index].complete;
+    setTodos(newTodos);
+  }
 
   return (
     <div className="todo">
       <h2 className="title">To-Do List</h2>
       <ToDoForm handleClick={handleClick} />
-      <ToDoList todos={todos} />
+      <ToDoList todos={todos} handleCheckbox={handleCheckbox} />
     </div>
   );
 };
