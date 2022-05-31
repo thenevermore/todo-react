@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import React, { useState } from 'react';
 
 import ToDoForm from '../components/ToDoForm';
@@ -24,6 +25,7 @@ const ToDo = () => {
       <h2 className="title">To-Do List</h2>
       <ToDoForm handleClick={handleClick} />
       <ToDoList todos={todos} handleCheckbox={handleCheckbox} />
+      <Button variant="outlined" color="error">Remove completed</Button>
     </div>
   );
 };
