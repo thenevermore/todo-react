@@ -7,12 +7,14 @@ const ToDo = () => {
   const [todos, setTodos] = useState([]);
 
   const handleClick = (todo) => {
-    const newTodo = { id: todos.length, task: todo, complete: false };
+    const newTodo = { id: todos.length + 1, task: todo, complete: false };
     setTodos([...todos, newTodo]);
   };
 
-  const handleCheckbox = (index) => {
+  const handleCheckbox = (id) => {
     const newTodos = [...todos];
+    const index = newTodos.findIndex(todo => todo.id === id);
+    
     newTodos[index].complete = !newTodos[index].complete;
     setTodos(newTodos);
   }
