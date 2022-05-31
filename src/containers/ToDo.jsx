@@ -7,7 +7,8 @@ const ToDo = () => {
   const [todos, setTodos] = useState([]);
 
   const handleClick = (todo) => {
-    // state is immutable, you need to replace the whole array
+    // NEVER mutate state directly, like using push() or =
+    // Treat state as if it were immutable, so you replace the whole array
     // ...todos is the spread operator, it spreads the array
     setTodos([...todos, todo]);
   };
