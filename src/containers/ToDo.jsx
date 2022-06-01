@@ -20,12 +20,17 @@ const ToDo = () => {
     setTodos(newTodos);
   }
 
+  const removeCompleted = () => {
+    const newTodos = todos.filter(todo => !todo.complete);
+    setTodos(newTodos);
+  }
+
   return (
     <div className="todo">
       <h2 className="title">To-Do List</h2>
       <ToDoForm handleClick={handleClick} />
       <ToDoList todos={todos} handleCheckbox={handleCheckbox} />
-      <Button variant="outlined" color="error">Remove completed</Button>
+      <Button variant="outlined" color="error" onClick={removeCompleted}>Remove completed</Button>
     </div>
   );
 };
