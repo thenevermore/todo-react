@@ -1,11 +1,15 @@
 import { Button } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import ToDoForm from '../components/ToDoForm';
 import ToDoList from '../components/ToDoList';
 
 const ToDo = () => {
   const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    document.title = `You have ${todos.length} tasks`;
+  }, [todos]);
 
   const handleClick = (todo) => {
     const newTodo = { id: todos.length + 1, task: todo, complete: false };
