@@ -13,6 +13,7 @@ const ToDoList = ({ todos, handleCheckbox }) => {
                   <Checkbox
                     onChange={() => handleCheckbox(todo.id)}
                     disableRipple
+                    checked={todo.complete}
                   />
                 </ListItemIcon>
                 <ListItemText
