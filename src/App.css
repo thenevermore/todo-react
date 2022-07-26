@@ -28,9 +28,16 @@
   width: fit-content;
 }
 
+.todo-list ul {
+  text-align :left;
+}
+
 .todo-form span {
   display: flex;
   justify-content: space-between;
+}
+.todo-form p {
+  text-align :left;
 }
 
 .todo-form input {

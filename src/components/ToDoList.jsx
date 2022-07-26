@@ -1,10 +1,15 @@
 import React from 'react';
 
-const ToDoList = () => {
+const ToDoList = ({item}) => {
+  
   return (
     <div className='todo-list'>
       <ul>
-        <li>Menyapu</li>
+        {
+          item.map((aktivitas) => {
+            return <li key={aktivitas}>{`hari ini ${aktivitas}`}</li>
+          })
+        }
       </ul>
     </div>
   );
