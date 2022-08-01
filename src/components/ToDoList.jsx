@@ -1,16 +1,27 @@
 import React from 'react';
+import { List, ListItem, ListItemButton, Checkbox, ListItemText, ListItemIcon } from '@mui/material';
 
-const ToDoList = ({item}) => {
+const ToDoList = ({item, handleCheckbox}) => {
+  
   
   return (
     <div className='todo-list'>
-      <ul>
+      <List>
         {
-          item.map((aktivitas) => {
-            return <li key={aktivitas}>{`hari ini ${aktivitas}`}</li>
+          item.map((aktivitas, index) => {
+            return (
+              <ListItem key={index} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                  <Checkbox onChange={() => { handleCheckbox(aktivitas.id) }} checked={aktivitas.complete} />
+                  </ListItemIcon>
+                  <ListItemText className={ aktivitas.complete && "complete" }>{aktivitas.task}</ListItemText>
+                  {/* pengecekan dengan ternary >> aktivitas.complete ? "complete" : "" <<  */}
+                </ListItemButton>                    
+              </ListItem>)
           })
         }
-      </ul>
+      </List>
     </div>
   );
 };

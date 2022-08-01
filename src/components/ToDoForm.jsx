@@ -1,3 +1,4 @@
+import { TextField, Button } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
 
@@ -20,10 +21,9 @@ const ToDoForm = ({handle}) => {
       <form onSubmit={handleKeyPress}>
       <p>~ Today I need to ~</p>
       <span>
-        <input value={todo} onChange={(e) => { setTodo(e.target.value) }} />
-        <button onClick={() => submitHandler(todo)}>Submit</button>
+        <TextField label="Aktifitas" variant="outlined" value={todo} onChange={(e) => { setTodo(e.target.value) }} />
+        <Button variant="contained" onClick={() => submitHandler(todo)}>Submit</Button>
       </span>
-      <p>{ todo }</p>
       </form>
     </div>
   );

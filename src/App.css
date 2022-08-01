@@ -1,4 +1,5 @@
 .App {
+  font-family: 'Roboto';
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -37,9 +38,21 @@
   justify-content: space-between;
 }
 .todo-form p {
-  text-align :left;
+  text-align :center;
 }
 
 .todo-form input {
   width: 80%;
+}
+.todo-form span {
+  display: flex;
+  justify-content : space-between;
+}
+
+.todo-form span > *:first-child {
+  width: 80%;
+}
+
+.complete {
+  text-decoration: line-through;
 }
